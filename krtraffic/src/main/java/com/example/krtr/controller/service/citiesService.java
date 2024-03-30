@@ -56,11 +56,15 @@ public class citiesService {
 	
 	public String getCCTVUrl(String city) throws IOException, JsonMappingException, JsonProcessingException{
 		
+		String result ="";
+		
 		LOGGER.info("{}", city);
 		
-//		List<citiesEntity> cityInfo = citiesRepo.findByCityName(city);
-//		
-//		LOGGER.info("cityInfo : {}", cityInfo);
+		for (citiesEntity citiesEntity : citiesRepo.findByCityName(city)) {
+			result += citiesEntity.toString();
+		}
+		
+		return result;
 		
 //		String StringUrl = util.getAPIData(itsKey, 0, 0, 0, 0);
 //		
@@ -99,7 +103,6 @@ public class citiesService {
 //        String cctvUrl = cctvUrlNode.toString().replace("\"", " ");
 //    	
 //		return cctvUrl;
-		return city;
 		
 	}
 

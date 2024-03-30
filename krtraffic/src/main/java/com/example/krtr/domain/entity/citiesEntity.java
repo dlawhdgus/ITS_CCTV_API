@@ -16,9 +16,9 @@ public class citiesEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cityidx;
-	private String cityname;
-	private String roadid;
+	private int cityIdx;
+	private String cityName;
+	private String roadId;
 	
 }
 

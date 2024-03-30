@@ -25,7 +25,7 @@ public class mainUrlController {
 		return "../static/index";
 	}
 	
-	@GetMapping("/cctv")
+	@GetMapping("/cctv1")
 	public String cctvView(Model model) throws IOException {
 		return "cctv.html";
 	}
