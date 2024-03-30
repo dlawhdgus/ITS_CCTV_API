@@ -14,6 +14,8 @@ import com.example.krtr.domain.entity.roadsEntity;
 @Repository
 public interface roadsRepository extends JpaRepository<roadsEntity, String>{
 	
+	public List<roadsEntity> findByRoadName(String roadName);
+	
 }
 
 // select roads.road_name, roads.maxx, roads.minx, roads.maxy, roads.miny from roads left join cities on roads.road_name = cities.road_id  where cities.city_name = "서초";

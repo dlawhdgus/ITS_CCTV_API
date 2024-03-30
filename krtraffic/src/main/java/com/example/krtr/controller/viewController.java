@@ -32,27 +32,34 @@ public class viewController {
 		this.citiesService = citiesService;
 	}
 	
+//	@GetMapping("/cctv")
+//	public String basciView() {
+//		return "cctv.html";
+//	}
 	
-	
-	@PostMapping("/cctv")
-	public String showCCTV(@RequestParam("city") String city) throws IOException {
+	@GetMapping("/cctv")
+	public String showCCTV(Model model, @RequestParam("city") String city) throws IOException {
 		
 		
-		LOGGER.info("{}", city);
+
+		String apiData = citiesService.getCCTVUrl(city);
 		
-		String result ="";
+		LOGGER.info("apiData : {}", apiData);
 		
-		citiesService.getCCTVUrl(city);
-		
-		for (citiesEntity citiesEntity : citieisRepo.findByCityName(city)) {
-			result += citiesEntity.toString();
-		}
+		String url = citiesService.getCityUrl(city, apiData);
 		
 		
-		return result;
+		
+		model.addAttribute("cctvUrl", url);
+		
+		
+		return "cctv.html";
 	}
 	
-//	@GetMapping("/cctv")      -- success
+	
+	
+	
+//	@GetMapping("/cctv")    
 //	public String showCCTV1(@RequestParam("city") String city, Model model) throws IOException {
 //		
 //		
@@ -69,37 +76,3 @@ public class viewController {
 //	}
 	
 }
-
-//User
-//import java.util.HashMap;
-//import java.util.Map;
-//import java.util.Scanner;
-//
-//public class Main {
-//
-//    public static void main(String[] args) {
-//        // 경부선에 해당하는 하위 옵션들
-//        Map<String, String[]> optionsMap = new HashMap<>();
-//        optionsMap.put("경부선", new String[]{"서초", "원지동", "양재", "상적교", "달래내2", "금현동", "달래내1", "금토분기점1", "금토분기점2"});
-//        // 수도권제1순환선에 해당하는 하위 옵션들 추가
-//
-//        Scanner scanner = new Scanner(System.in);
-//
-//        System.out.println("선택하세요:");
-//        System.out.println("1. 경부선");
-//        System.out.println("2. 수도권제1순환선");
-//        int choice = scanner.nextInt();
-//
-//        if (choice == 1 || choice == 2) {
-//            String selectedLine = (choice == 1) ? "경부선" : "수도권제1순환선";
-//            String[] options = optionsMap.get(selectedLine);
-//
-//            System.out.println(selectedLine + "의 하위 옵션들:");
-//            for (String option : options) {
-//                System.out.println(option);
-//            }
-//        } else {
-//            System.out.println("올바른 선택이 아닙니다.");
-//        }
-//    }
-//}

@@ -8,6 +8,7 @@
 
 <body>
 	<h1 id="title">KoreanTraffic-CCTV</h1>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<select id="roads">
 		<option value="1">경부선</option>
@@ -256,14 +257,15 @@
 		    else
 		        $('#cities').val('');
 		}).change();
-		//POST btn
+
 		$(document).ready(function() {
 		        $('#confirmBtn').click(function() {
 		            var selectedCity = $('#cities').val();
+		            // 랜덤 쿼리 매개변수 생성
+		            var randomParam = new Date().getTime();
 		            $.ajax({
-		                type: 'POST',
-		                url: '/cctv?city=',
-		                data: { city: selectedCity },
+		                type: 'GET',
+		                url: "cctv?city=" + selectedCity,
 		                success: function(response) {
 		                    // 서버로부터의 응답을 처리하는 로직 추가
 		                    console.log('서버 응답:', response);
