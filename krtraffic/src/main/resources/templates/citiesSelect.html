@@ -241,6 +241,21 @@
 	
 		<button id="confirmBtn">확인</button>
 		<script>
+			// roads의 selet가 변할 때 그 값에 따른 cities값 변화
+			$('#roads').change(function() {
+			    var parent = $(this);
+			    
+			    var visibleOptions = $('#cities option').hide().filter(function() {
+			         return $(this).data('parent') == parent.val();
+			    }).show();
+			            
+			    if(visibleOptions.length)
+			        visibleOptions.eq(0).prop('selected', true);
+			    else
+			        $('#cities').val('');
+			}).change();
+					
+			// Select에서 받은 city의 값으로 redirect
 		    $(document).ready(function() {
 		        $('#confirmBtn').click(function() {
 		            var selectedCity = $('#cities').val();
