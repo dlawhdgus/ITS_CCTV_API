@@ -32,29 +32,25 @@ public class viewController {
 		this.citieisRepo = citieisRepo;
 		this.citiesService = citiesService;
 	}
-	
-//	@GetMapping("/cctv")
-//	public String basciView() {
-//		return "cctv.html";
-//	}
-	
-	@GetMapping("/cctv")
-	public String showCCTV(Model model, @RequestParam("city") String city) throws IOException {
-		
-		
 
-		String apiData = citiesService.getCCTVUrl(city);
-		LOGGER.info("{}", city);
+
+	@GetMapping("/cctv")
+	public String showCCTV(Model model, @RequestParam(name = "city", defaultValue = "") String city) throws IOException {
+		LOGGER.info("city : {}", city);
 		
-		String url = citiesService.getCityUrl(city, apiData);
+	    if(city.isEmpty()) {
+	    	return "test.html";
+	    } else {
+	    	String apiData = citiesService.getCCTVUrl(city);
+	    	String url = citiesService.getCityUrl(city, apiData);
+	    	LOGGER.info("CCTV URL: {}", url);
+	    	model.addAttribute("cctvUrl", url);
+	    	return "cctv.html"; // CCTV URL을 직접 반환
+	    }
 		
-		
-		model.addAttribute("cctvUrl", url);
-		
-		LOGGER.info("model : {}", model);
-		
-		return "cctv.html";
 	}
+
+
 	
 	
 	
