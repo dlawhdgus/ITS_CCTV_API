@@ -28,7 +28,6 @@ public class getCCTVUrl {
 		conn.setRequestMethod("GET");
 		conn.setRequestProperty("Content-type", "text/xml;charset=UTF-8");
 		  
-		System.out.println("Response code: " + conn.getResponseCode());
 		BufferedReader rd;
 		  
 		if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {

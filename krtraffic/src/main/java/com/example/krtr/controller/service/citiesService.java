@@ -1,5 +1,9 @@
 package com.example.krtr.controller.service;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.hibernate.type.BasicTypeReference;
 
 import org.slf4j.Logger;
@@ -65,8 +69,6 @@ public class citiesService {
 		
 		String citiyInfo ="";
 		
-		LOGGER.info("{}", city);
-		
 		for (citiesEntity citiesEntity : citiesRepo.findByCityName(city)) {
 			citiyInfo += citiesEntity.toString();
 		}
@@ -82,12 +84,9 @@ public class citiesService {
 	}
 	
 	public String getRoadInfo(String cityInfo) throws IOException{
-		
-		LOGGER.info("{}", cityInfo);
-		
 		String roadInfo ="";
 		
-		Pattern roadInfoPattern = Pattern.compile("roadId=([^,$)]+)");
+		Pattern roadInfoPattern = Pattern.compile("roadId=([^,$&0-9)]+)");
         Matcher roadInfoMatcher = roadInfoPattern.matcher(cityInfo);
 		
 		if(roadInfoMatcher.find()) {
@@ -118,27 +117,37 @@ public class citiesService {
 	}
 	
 	public String getCityUrl(String city, String apiData) {
-		String url ="";
-		Gson gson = new Gson();
-		// apiData : {"response":{"coordtype":1,"data":[{"roadsectionid":"","coordx":127.086135864257,"coordy":37.4141845703125,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 금토분기점2","cctvurl":"http://cctvsec.ktict.co.kr/270/uWRT6l6xzGA7NBI7Uz/T6MpgesyOgmyb4Andqzg0PYBcrmLe25rxGlAiwbIeE5/cRoWe7fdcr/JGKJxfG+g59w=="},{"roadsectionid":"","coordx":127.08472,"coordy":37.4153,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 금토분기점1","cctvurl":"http://cctvsec.ktict.co.kr/320/VhRfKwEXMAqZ3f4QD7U1U0Ub4+i+IQuQHBz42YLhxtL4+qeORl6f37g9YEyoUd7Dmof33sjUoklF5AFB5dYFfg=="},{"roadsectionid":"","coordx":127.084731,"coordy":37.415971,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 금현동","cctvurl":"http://cctvsec.ktict.co.kr/2431/UVbTGwyhEMPvfAHHngBGtYaSrgZ28xcMXsj5iUDW8pn7U0YbbrmY0sO5b85HWlmSXDMbL5oZRmx9eLR2WlpZlQ=="},{"roadsectionid":"","coordx":127.07639,"coordy":37.42444,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 달래내1","cctvurl":"http://cctvsec.ktict.co.kr/97/iR/LJi7iJ76umptV9kZ3q2R6urRQOVkdj3DCUe+klZtNZqaRIZ+PBsObivlzG2JvMxrcgAWiteaBHjzo7rZQfA=="},{"roadsectionid":"","coordx":127.069449,"coordy":37.430381,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 달래내2","cctvurl":"http://cctvsec.ktict.co.kr/501/osjm6iHu67rTC0GnUMReBPaNEVD9zXnN5nfgvVcIzIMBwsD4814rTqjTL3o7j/kssKBopYUXsPMtETHK9P2ZWQ=="},{"roadsectionid":"","coordx":127.060888,"coordy":37.439058,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 상적교","cctvurl":"http://cctvsec.ktict.co.kr/95/oh9BPV6yOap9I11jkmKDgP5RAiE1vyBBF0jEhsOhtc/gFX3ga0vuqOm7ZTbkhgv3AHCF47IvYTeSl6K/YYK7MA=="},{"roadsectionid":"","coordx":127.060749,"coordy":37.440057,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 원지동","cctvurl":"http://cctvsec.ktict.co.kr/2430/Z2PIlQoz+mGSyWubCHqbRPFBMbZYtZySPz+vZSyl4QRXILuGHgf+nopvQSxrWsTqBV9C6P3LcVOiGcii/HhE6g=="},{"roadsectionid":"","coordx":127.042004,"coordy":37.461626,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 양재","cctvurl":"http://cctvsec.ktict.co.kr/100/kE7ozYtzhArVCxyxASPW42gNSmm6i/ia5Vvoh4tv0zhWS2xder4zEBpgAjB8FsI+/yeCq2R3hAftmyPy/RlM1Q=="},{"roadsectionid":"","coordx":127.02583,"coordy":37.48306,"cctvresolution":"","filecreatetime":"","cctvtype":2,"cctvformat":"MP4","cctvname":"[경부선] 서초","cctvurl":"http://cctvsec.ktict.co.kr/99/FTJEu+C4mqPQ5EvPNRRLWSRl97j3offHhBk7M4R6AY9FmE6ydDqFdSgm9PTgqbaPpGpz9A73TE++dWBl5vXa3A=="}],"datacount":9}}
-		JsonObject jsonObject = gson.fromJson(apiData, JsonObject.class);
+		try {
+			String url = null;
+			Object urlData = null;
+			JSONParser parser = new JSONParser();
+			
+			JSONObject apiJsonData = (JSONObject) parser.parse(apiData);
+			
+			JSONObject response = (JSONObject) apiJsonData.get("response");
+			JSONArray data = (JSONArray) response.get("data");
+			
+			for(Object cctv : data) {
+				Object c = ((JSONObject) cctv).get("cctvname");
+				urlData = ((JSONObject) cctv).get("cctvurl");
+				
+				if(c.toString().replaceAll("\\[.*\\]| ","").equals(city)) {
+					urlData = ((JSONObject) cctv).get("cctvurl");
+					
+					url = urlData.toString();
+				
+				}
+			}
+			return url;
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
 		
-		LOGGER.info("jo : {}", jsonObject);
-		
-		JsonArray dataArray = jsonObject.getAsJsonArray("data");
-	        
-//        for (JsonElement element : dataArray) {
-//            JsonObject dataObject = element.getAsJsonObject();
-//            String cctvName = dataObject.get("cctvname").getAsString();
-//            if (cctvName.equals(city)) {
-//                url = dataObject.get("cctvurl").getAsString();
-//                break;
-//            }
-//        }
 
 	
-		
-		return url;
 	}
 
 		

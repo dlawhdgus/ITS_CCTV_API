@@ -7,6 +7,7 @@
 </head>
 
 <body>
+	
 	<h1 id="title">KoreanTraffic-CCTV</h1>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -241,7 +242,7 @@
 	</select>
 
 	<button id="confirmBtn">확인</button>
-	<video controls width="100%" height="800px">
+	<video controls width="100%" height="600px">
 		<source th:src="${cctvUrl}" type="video/mp4" />
 	</video>
 	<script>
@@ -261,8 +262,6 @@
 		$(document).ready(function() {
 		        $('#confirmBtn').click(function() {
 		            var selectedCity = $('#cities').val();
-		            // 랜덤 쿼리 매개변수 생성
-		            var randomParam = new Date().getTime();
 		            $.ajax({
 		                type: 'GET',
 		                url: "cctv?city=" + selectedCity,
