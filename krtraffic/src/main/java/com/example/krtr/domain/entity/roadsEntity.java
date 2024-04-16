@@ -1,21 +1,23 @@
 package com.example.krtr.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
+import java.sql.Array;
 
-@Entity
-@Table(name ="roads")
-@Data
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document(collation = "roads")
 public class roadsEntity {
 	@Id
-	private String roadName;
-	private int roadCount;
-	private Double maxx;
-	private Double minx;
-	private Double maxy;
-	private Double miny;
+	private String id;
+	private Array data;
+	
+	public Array getData() {
+		return data;
+	}
+	public void setData(Array data) {
+		this.data = data;
+	}
 	
 	
 }
