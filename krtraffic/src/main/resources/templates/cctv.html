@@ -8,290 +8,290 @@
 
 <body>
 
-	<h1 id="title">KoreanTraffic-CCTV</h1>
+<h1 id="title">KoreanTraffic-CCTV</h1>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<select id="roads">
-		<option value="경부선">경부선</option>
-		<option value="경인선">경인선</option>
-		<option value="구리포천선">구리포천선</option>
-		<option value="서울문산선">서울문산선</option>
-		<option value="서울양양선">서울양양선</option>
-		<option value="서해안선">서해안선</option>
-		<option value="수도권제1순환선">수도권제1순환선</option>
-		<option value="수원광명선">수원광명선</option>
-		<option value="안양성남선">안양성남선</option>
-		<option value="영동선">영동선</option>
-		<option value="용인서울선">용인서울선</option>
-		<option value="인천국제공항선">인천국제공항선</option>
-		<option value="제2경인선">제2경인선</option>
-		<option value="제2중부선">제2중부선</option>
-		<option value="중부선">중부선</option>
-	</select>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<select id="roads">
+	<option value="경부선">경부선</option>
+	<option value="경인선">경인선</option>
+	<option value="구리포천선">구리포천선</option>
+	<option value="서울문산선">서울문산선</option>
+	<option value="서울양양선">서울양양선</option>
+	<option value="서해안선">서해안선</option>
+	<option value="수도권제1순환선">수도권제1순환선</option>
+	<option value="수원광명선">수원광명선</option>
+	<option value="안양성남선">안양성남선</option>
+	<option value="영동선">영동선</option>
+	<option value="용인서울선">용인서울선</option>
+	<option value="인천국제공항선">인천국제공항선</option>
+	<option value="제2경인선">제2경인선</option>
+	<option value="제2중부선">제2중부선</option>
+	<option value="중부선">중부선</option>
+</select>
 
-	<select id="cities">
-		<option data-parent="경부선" value="서초">서초</option>
-		<option data-parent="경부선" value="원지동">원지동</option>
-		<option data-parent="경부선" value="양재">양재</option>
-		<option data-parent="경부선" value="상적교">상적교</option>
-		<option data-parent="경부선" value="달래내2">달래내2</option>
-		<option data-parent="경부선" value="금현동">금현동</option>
-		<option data-parent="경부선" value="달래내1">달래내1</option>
-		<option data-parent="경부선" value="금토분기점1">금토분기점1</option>
-		<option data-parent="경부선" value="금토분기점2">금토분기점2</option>
-		<option data-parent="경인선" value="신월">신월</option>
-		<option data-parent="경인선" value="부천">부천</option>
-		<option data-parent="경인선" value="인천영업소">인천영업소</option>
-		<option data-parent="경인선" value="도당">도당</option>
-		<option data-parent="경인선" value="서운분기점2">서운분기점2</option>
-		<option data-parent="경인선" value="도당육교">도당육교</option>
-		<option data-parent="경인선" value="신월-경부선">신월-경부선</option>
-		<option data-parent="경인선" value="도당2">도당2</option>
-		<option data-parent="경인선" value="신월2">신월2</option>
-		<option data-parent="구리포천선" value="남구리IC">남구리IC</option>
-		<option data-parent="구리포천선" value="구리터널관리사무소">구리터널관리사무소</option>
-		<option data-parent="구리포천선" value="중랑IC교">중랑IC교</option>
-		<option data-parent="구리포천선" value="갈매2육교">갈매2육교</option>
-		<option data-parent="구리포천선" value="용암천1교">용암천1교</option>
-		<option data-parent="구리포천선" value="별내2교">별내2교</option>
-		<option data-parent="구리포천선" value="남별내IC">남별내IC</option>
-		<option data-parent="구리포천선" value="별내휴게소">별내휴게소</option>
-		<option data-parent="서울문산선" value="봉대산JCT">봉대산JCT</option>
-		<option data-parent="서울문산선" value="흥도IC">흥도IC</option>
-		<option data-parent="서울문산선" value="성라산생태교">성라산생태교</option>
-		<option data-parent="서울문산선" value="성사교">성사교</option>
-		<option data-parent="서울문산선" value="고양JCT북">고양JCT북</option>
-		<option data-parent="서울문산선" value="원당교">원당교</option>
-		<option data-parent="서울문산선" value="사리현IC">사리현IC</option>
-		<option data-parent="서울문산선" value="문봉교">문봉교</option>
-		<option data-parent="서울문산선" value="성석육교">성석육교</option>
-		<option data-parent="서울문산선" value="남고양IC지선1">남고양IC지선1</option>
-		<option data-parent="서울양양선" value="강일">강일</option>
-		<option data-parent="서울양양선" value="남양주영업소3">남양주영업소3</option>
-		<option data-parent="서울양양선" value="덕소1교">덕소1교</option>
-		<option data-parent="서울양양선" value="미사대교">미사대교</option>
-		<option data-parent="서울양양선" value="미사">미사</option>
-		<option data-parent="서울양양선" value="남양주영업소2">남양주영업소2</option>
-		<option data-parent="서울양양선" value="월문1교">월문1교</option>
-		<option data-parent="서울양양선" value="삼패교">삼패교</option>
-		<option data-parent="서울양양선" value="덕소삼패영업소">덕소삼패영업소</option>
-		<option data-parent="서울양양선" value="남양주영업소1">남양주영업소1</option>
-		<option data-parent="서울양양선" value="미사대교종점">미사대교종점</option>
-		<option data-parent="서울양양선" value="월문1터널외부(양양)">월문1터널외부(양양)</option>
-		<option data-parent="서해안선" value="금천">금천</option>
-		<option data-parent="서해안선" value="금천고가교">금천고가교</option>
-		<option data-parent="서해안선" value="일직분기점">일직분기점</option>
-		<option data-parent="서해안선" value="일직분기점2">일직분기점2</option>
-		<option data-parent="수도권제1순환선" value="성남">성남</option>
-		<option data-parent="수도권제1순환선" value="성남요금소">성남요금소</option>
-		<option data-parent="수도권제1순환선" value="송파">송파</option>
-		<option data-parent="수도권제1순환선" value="서하남2">서하남2</option>
-		<option data-parent="수도권제1순환선" value="광암터널2">광암터널2</option>
-		<option data-parent="수도권제1순환선" value="광암터널3">광암터널3</option>
-		<option data-parent="수도권제1순환선" value="하남분기점">하남분기점</option>
-		<option data-parent="수도권제1순환선" value="상일">상일</option>
-		<option data-parent="수도권제1순환선" value="강일">강일</option>
-		<option data-parent="수도권제1순환선" value="토평">토평</option>
-		<option data-parent="수도권제1순환선" value="남양주">남양주</option>
-		<option data-parent="수도권제1순환선" value="퇴계원">퇴계원</option>
-		<option data-parent="수도권제1순환선" value="구리">구리</option>
-		<option data-parent="수도권제1순환선" value="안현분기점">안현분기점</option>
-		<option data-parent="수도권제1순환선" value="시흥">시흥</option>
-		<option data-parent="수도권제1순환선" value="장수">장수</option>
-		<option data-parent="수도권제1순환선" value="서운분기점">서운분기점</option>
-		<option data-parent="수도권제1순환선" value="노오지분기점">노오지분기점</option>
-		<option data-parent="수도권제1순환선" value="김포">김포</option>
-		<option data-parent="수도권제1순환선" value="자유로분기점">자유로분기점</option>
-		<option data-parent="수도권제1순환선" value="일산">일산</option>
-		<option data-parent="수도권제1순환선" value="시흥영업소">시흥영업소</option>
-		<option data-parent="수도권제1순환선" value="계양">계양</option>
-		<option data-parent="수도권제1순환선" value="재너머골">재너머골</option>
-		<option data-parent="수도권제1순환선" value="김포영업소">김포영업소</option>
-		<option data-parent="수도권제1순환선" value="중동">중동</option>
-		<option data-parent="수도권제1순환선" value="송내">송내</option>
-		<option data-parent="수도권제1순환선" value="거여고가교">거여고가교</option>
-		<option data-parent="수도권제1순환선" value="복정교">복정교</option>
-		<option data-parent="수도권제1순환선" value="삼산1">삼산1</option>
-		<option data-parent="수도권제1순환선" value="일신">일신</option>
-		<option data-parent="수도권제1순환선" value="성남삼평교2">성남삼평교2</option>
-		<option data-parent="수도권제1순환선" value="성남영업소">성남영업소</option>
-		<option data-parent="수도권제1순환선" value="위례">위례</option>
-		<option data-parent="수도권제1순환선" value="강일육교">강일육교</option>
-		<option data-parent="수도권제1순환선" value="구리영업소">구리영업소</option>
-		<option data-parent="수도권제1순환선" value="구리2">구리2</option>
-		<option data-parent="수도권제1순환선" value="김포대교(북단)">김포대교(북단)</option>
-		<option data-parent="수도권제1순환선" value="김포대교(남단)">김포대교(남단)</option>
-		<option data-parent="수도권제1순환선" value="동양동">동양동</option>
-		<option data-parent="수도권제1순환선" value="서운분기점1">서운분기점1</option>
-		<option data-parent="수도권제1순환선" value="중동진입">중동진입</option>
-		<option data-parent="수도권제1순환선" value="중동진출">중동진출</option>
-		<option data-parent="수도권제1순환선" value="송내진입">송내진입</option>
-		<option data-parent="수도권제1순환선" value="인천대공원">인천대공원</option>
-		<option data-parent="수도권제1순환선" value="소래터널(일산)">소래터널(일산)</option>
-		<option data-parent="수도권제1순환선" value="삼산2">삼산2</option>
-		<option data-parent="수도권제1순환선" value="장수2">장수2</option>
-		<option data-parent="수도권제1순환선" value="구리휴게소">구리휴게소</option>
-		<option data-parent="수도권제1순환선" value="서하남">서하남</option>
-		<option data-parent="수도권제1순환선" value="서하남휴게소">서하남휴게소</option>
-		<option data-parent="수도권제1순환선" value="동양-경부선">동양-경부선</option>
-		<option data-parent="수도권제1순환선" value="소래터널-시흥">소래터널-시흥</option>
-		<option data-parent="수도권제1순환선" value="불암산TG">불암산TG</option>
-		<option data-parent="수도권제1순환선" value="별내IC">별내IC</option>
-		<option data-parent="수도권제1순환선" value="불암터널(일산방향)">불암터널(일산방향)</option>
-		<option data-parent="수도권제1순환선" value="불암터널(퇴계원방향)">불암터널(퇴계원방향)</option>
-		<option data-parent="수도권제1순환선" value="수락터널(일산방향)">수락터널(일산방향)</option>
-		<option data-parent="수도권제1순환선" value="수락터널(퇴계원방향)">수락터널(퇴계원방향)</option>
-		<option data-parent="수도권제1순환선" value="의정부IC">의정부IC</option>
-		<option data-parent="수도권제1순환선" value="사패터널(퇴계원방향)">사패터널(퇴계원방향)</option>
-		<option data-parent="수도권제1순환선" value="송추IC">송추IC</option>
-		<option data-parent="수도권제1순환선" value="노고1터널(일산방향)">노고1터널(일산방향)</option>
-		<option data-parent="수도권제1순환선" value="노고1터널(퇴계원방향)">노고1터널(퇴계원방향)</option>
-		<option data-parent="수도권제1순환선" value="양주TG">양주TG</option>
-		<option data-parent="수도권제1순환선" value="통일로IC">통일로IC</option>
-		<option data-parent="수도권제1순환선" value="고양IC">고양IC</option>
-		<option data-parent="수도권제1순환선" value="내곡교">내곡교</option>
-		<option data-parent="수도권제1순환선" value="노고2터널(퇴계원방향)">노고2터널(퇴계원방향)</option>
-		<option data-parent="수도권제1순환선" value="노고2터널(일산방향)">노고2터널(일산방향)</option>
-		<option data-parent="수도권제1순환선" value="공릉천교">공릉천교</option>
-		<option data-parent="수도권제1순환선" value="광암터널(퇴계원2)">광암터널(퇴계원2)</option>
-		<option data-parent="수도권제1순환선" value="광암터널(판교12)">광암터널(판교12)</option>
-		<option data-parent="수도권제1순환선" value="초일">초일</option>
-		<option data-parent="수도권제1순환선" value="가천대역BS">가천대역BS</option>
-		<option data-parent="수도권제1순환선" value="태평">태평</option>
-		<option data-parent="수도권제1순환선" value="계수4교">계수4교</option>
-		<option data-parent="수도권제1순환선" value="송파진입로">송파진입로</option>
-		<option data-parent="수도권제1순환선" value="위례2">위례2</option>
-		<option data-parent="수도권제1순환선" value="대장교">대장교</option>
-		<option data-parent="수도권제1순환선" value="시흥TG_일산">시흥TG_일산</option>
-		<option data-parent="수도권제1순환선" value="계수1교">계수1교</option>
-		<option data-parent="수원광명선" value="성채터널앞">성채터널앞</option>
-		<option data-parent="수원광명선" value="성채터널(광명)">성채터널(광명)</option>
-		<option data-parent="수원광명선" value="성채터널(수원)">성채터널(수원)</option>
-		<option data-parent="수원광명선" value="성채터널">성채터널</option>
-		<option data-parent="수원광명선" value="소하IC">소하IC</option>
-		<option data-parent="안양성남선" value="삼막IC(성남)">삼막IC(성남)</option>
-		<option data-parent="안양성남선" value="삼성산터널1(안양)">삼성산터널1(안양)</option>
-		<option data-parent="안양성남선" value="삼성산터널1(성남)">삼성산터널1(성남)</option>
-		<option data-parent="안양성남선" value="삼성산터널2(안양)">삼성산터널2(안양)</option>
-		<option data-parent="안양성남선" value="삼성산터널2(성남)">삼성산터널2(성남)</option>
-		<option data-parent="안양성남선" value="안양과천영업소(안양)">안양과천영업소(안양)</option>
-		<option data-parent="안양성남선" value="동판교IC(본선)">동판교IC(본선)</option>
-		<option data-parent="안양성남선" value="여수대로">여수대로</option>
-		<option data-parent="영동선" value="논현육교">논현육교</option>
-		<option data-parent="영동선" value="서창JC">서창JC</option>
-		<option data-parent="영동선" value="서창">서창</option>
-		<option data-parent="용인서울선" value="고등IC서울">고등IC서울</option>
-		<option data-parent="용인서울선" value="고등교">고등교</option>
-		<option data-parent="용인서울선" value="심세곡관리동용인">심세곡관리동용인</option>
-		<option data-parent="용인서울선" value="헌릉IC">헌릉IC</option>
-		<option data-parent="용인서울선" value="세곡교">세곡교</option>
-		<option data-parent="용인서울선" value="고산터널서울">고산터널서울</option>
-		<option data-parent="용인서울선" value="고산터널용인">고산터널용인</option>
-		<option data-parent="용인서울선" value="고등IC용인">고등IC용인</option>
-		<option data-parent="용인서울선" value="고등IC램프">고등IC램프</option>
-		<option data-parent="용인서울선" value="고등터널서울">고등터널서울</option>
-		<option data-parent="용인서울선" value="고등터널용인">고등터널용인</option>
-		<option data-parent="용인서울선" value="심곡터널출구용인">심곡터널출구용인</option>
-		<option data-parent="용인서울선" value="심곡터널입구용인">심곡터널입구용인</option>
-		<option data-parent="용인서울선" value="심곡터널출구서울">심곡터널출구서울</option>
-		<option data-parent="용인서울선" value="심세곡관리동서울">심세곡관리동서울</option>
-		<option data-parent="용인서울선" value="세곡터널출구용인">세곡터널출구용인</option>
-		<option data-parent="용인서울선" value="세곡터널입구서울">세곡터널입구서울</option>
-		<option data-parent="용인서울선" value="세곡터널입구용인">세곡터널입구용인</option>
-		<option data-parent="용인서울선" value="심곡터널입구서울">심곡터널입구서울</option>
-		<option data-parent="용인서울선" value="세곡터널출구서울">세곡터널출구서울</option>
-		<option data-parent="인천국제공항선" value="노오지분기점(공항27.경부선)">노오지분기점(공항27.경부선)</option>
-		<option data-parent="인천국제공항선" value="김포나들목(서울30.안양성남선)">김포나들목(서울30.안양성남선)</option>
-		<option data-parent="인천국제공항선" value="개화터널입구(서울32.경인선)">개화터널입구(서울32.경인선)</option>
-		<option data-parent="인천국제공항선" value="방화대교남단(올림픽대로)(서울34.수원광명선)">방화대교남단(올림픽대로)(서울34.수원광명선)</option>
-		<option data-parent="인천국제공항선" value="방화대교북단(강변북로)(공항36.0)">방화대교북단(강변북로)(공항36.0)</option>
-		<option data-parent="인천국제공항선" value="서울36.0K">서울36.0K</option>
-		<option data-parent="인천국제공항선" value="공항32.8K">공항32.8K</option>
-		<option data-parent="인천국제공항선" value="공항30.1K">공항30.1K</option>
-		<option data-parent="제2경인선" value="남인천">남인천</option>
-		<option data-parent="제2경인선" value="신천">신천</option>
-		<option data-parent="제2경인선" value="광명">광명</option>
-		<option data-parent="제2경인선" value="서창분기점">서창분기점</option>
-		<option data-parent="제2경인선" value="남인천영업소1">남인천영업소1</option>
-		<option data-parent="제2경인선" value="은행3교">은행3교</option>
-		<option data-parent="제2경인선" value="일직">일직</option>
-		<option data-parent="제2경인선" value="석수">석수</option>
-		<option data-parent="제2경인선" value="광명터널">광명터널</option>
-		<option data-parent="제2경인선" value="안현분기점1">안현분기점1</option>
-		<option data-parent="제2경인선" value="안현분기점2">안현분기점2</option>
-		<option data-parent="제2경인선" value="[안양]광명터널(안양2)">[안양]광명터널(안양2)</option>
-		<option data-parent="제2경인선" value="[안양]광명터널(안양3고정)">[안양]광명터널(안양3고정)</option>
-		<option data-parent="제2경인선" value="[인천]광명터널(인천3)">[인천]광명터널(인천3)</option>
-		<option data-parent="제2경인선" value="서창분기점2">서창분기점2</option>
-		<option data-parent="제2경인선" value="남인천2">남인천2</option>
-		<option data-parent="제2중부선" value="광지원터널">광지원터널</option>
-		<option data-parent="제2중부선" value="광지원2교">광지원2교</option>
-		<option data-parent="제2중부선" value="중부1터널">중부1터널</option>
-		<option data-parent="중부선" value="상산곡교">상산곡교</option>
-		<option data-parent="중부선" value="하산곡">하산곡</option>
-		<option data-parent="중부선" value="동서울영업소">동서울영업소</option>
-		<option data-parent="중부선" value="하남">하남</option>
-		<option data-parent="중부선" value="광주">광주</option>
-		<option data-parent="중부선" value="광지원2교">광지원2교</option>
-		<option data-parent="중부선" value="중부1터널">중부1터널</option>
-		<option data-parent="중부선" value="산곡분기점">산곡분기점</option>
-		<option data-parent="중부선" value="번천졸음쉼터">번천졸음쉼터</option>
-		<option data-parent="중부선" value="상산곡">상산곡</option>
-		<option data-parent="중부선" value="천현">천현</option>
-		<option data-parent="중부선" value="천현2">천현2</option>
-	</select>
+<select id="cities">
+	<option data-parent="경부선" value="서초">서초</option>
+	<option data-parent="경부선" value="원지동">원지동</option>
+	<option data-parent="경부선" value="양재">양재</option>
+	<option data-parent="경부선" value="상적교">상적교</option>
+	<option data-parent="경부선" value="달래내2">달래내2</option>
+	<option data-parent="경부선" value="금현동">금현동</option>
+	<option data-parent="경부선" value="달래내1">달래내1</option>
+	<option data-parent="경부선" value="금토분기점1">금토분기점1</option>
+	<option data-parent="경부선" value="금토분기점2">금토분기점2</option>
+	<option data-parent="경인선" value="신월">신월</option>
+	<option data-parent="경인선" value="부천">부천</option>
+	<option data-parent="경인선" value="인천영업소">인천영업소</option>
+	<option data-parent="경인선" value="도당">도당</option>
+	<option data-parent="경인선" value="서운분기점2">서운분기점2</option>
+	<option data-parent="경인선" value="도당육교">도당육교</option>
+	<option data-parent="경인선" value="신월-경부선">신월-경부선</option>
+	<option data-parent="경인선" value="도당2">도당2</option>
+	<option data-parent="경인선" value="신월2">신월2</option>
+	<option data-parent="구리포천선" value="남구리IC">남구리IC</option>
+	<option data-parent="구리포천선" value="구리터널관리사무소">구리터널관리사무소</option>
+	<option data-parent="구리포천선" value="중랑IC교">중랑IC교</option>
+	<option data-parent="구리포천선" value="갈매2육교">갈매2육교</option>
+	<option data-parent="구리포천선" value="용암천1교">용암천1교</option>
+	<option data-parent="구리포천선" value="별내2교">별내2교</option>
+	<option data-parent="구리포천선" value="남별내IC">남별내IC</option>
+	<option data-parent="구리포천선" value="별내휴게소">별내휴게소</option>
+	<option data-parent="서울문산선" value="봉대산JCT">봉대산JCT</option>
+	<option data-parent="서울문산선" value="흥도IC">흥도IC</option>
+	<option data-parent="서울문산선" value="성라산생태교">성라산생태교</option>
+	<option data-parent="서울문산선" value="성사교">성사교</option>
+	<option data-parent="서울문산선" value="고양JCT북">고양JCT북</option>
+	<option data-parent="서울문산선" value="원당교">원당교</option>
+	<option data-parent="서울문산선" value="사리현IC">사리현IC</option>
+	<option data-parent="서울문산선" value="문봉교">문봉교</option>
+	<option data-parent="서울문산선" value="성석육교">성석육교</option>
+	<option data-parent="서울문산선" value="남고양IC지선1">남고양IC지선1</option>
+	<option data-parent="서울양양선" value="강일">강일</option>
+	<option data-parent="서울양양선" value="남양주영업소3">남양주영업소3</option>
+	<option data-parent="서울양양선" value="덕소1교">덕소1교</option>
+	<option data-parent="서울양양선" value="미사대교">미사대교</option>
+	<option data-parent="서울양양선" value="미사">미사</option>
+	<option data-parent="서울양양선" value="남양주영업소2">남양주영업소2</option>
+	<option data-parent="서울양양선" value="월문1교">월문1교</option>
+	<option data-parent="서울양양선" value="삼패교">삼패교</option>
+	<option data-parent="서울양양선" value="덕소삼패영업소">덕소삼패영업소</option>
+	<option data-parent="서울양양선" value="남양주영업소1">남양주영업소1</option>
+	<option data-parent="서울양양선" value="미사대교종점">미사대교종점</option>
+	<option data-parent="서울양양선" value="월문1터널외부(양양)">월문1터널외부(양양)</option>
+	<option data-parent="서해안선" value="금천">금천</option>
+	<option data-parent="서해안선" value="금천고가교">금천고가교</option>
+	<option data-parent="서해안선" value="일직분기점">일직분기점</option>
+	<option data-parent="서해안선" value="일직분기점2">일직분기점2</option>
+	<option data-parent="수도권제1순환선" value="성남">성남</option>
+	<option data-parent="수도권제1순환선" value="성남요금소">성남요금소</option>
+	<option data-parent="수도권제1순환선" value="송파">송파</option>
+	<option data-parent="수도권제1순환선" value="서하남2">서하남2</option>
+	<option data-parent="수도권제1순환선" value="광암터널2">광암터널2</option>
+	<option data-parent="수도권제1순환선" value="광암터널3">광암터널3</option>
+	<option data-parent="수도권제1순환선" value="하남분기점">하남분기점</option>
+	<option data-parent="수도권제1순환선" value="상일">상일</option>
+	<option data-parent="수도권제1순환선" value="강일">강일</option>
+	<option data-parent="수도권제1순환선" value="토평">토평</option>
+	<option data-parent="수도권제1순환선" value="남양주">남양주</option>
+	<option data-parent="수도권제1순환선" value="퇴계원">퇴계원</option>
+	<option data-parent="수도권제1순환선" value="구리">구리</option>
+	<option data-parent="수도권제1순환선" value="안현분기점">안현분기점</option>
+	<option data-parent="수도권제1순환선" value="시흥">시흥</option>
+	<option data-parent="수도권제1순환선" value="장수">장수</option>
+	<option data-parent="수도권제1순환선" value="서운분기점">서운분기점</option>
+	<option data-parent="수도권제1순환선" value="노오지분기점">노오지분기점</option>
+	<option data-parent="수도권제1순환선" value="김포">김포</option>
+	<option data-parent="수도권제1순환선" value="자유로분기점">자유로분기점</option>
+	<option data-parent="수도권제1순환선" value="일산">일산</option>
+	<option data-parent="수도권제1순환선" value="시흥영업소">시흥영업소</option>
+	<option data-parent="수도권제1순환선" value="계양">계양</option>
+	<option data-parent="수도권제1순환선" value="재너머골">재너머골</option>
+	<option data-parent="수도권제1순환선" value="김포영업소">김포영업소</option>
+	<option data-parent="수도권제1순환선" value="중동">중동</option>
+	<option data-parent="수도권제1순환선" value="송내">송내</option>
+	<option data-parent="수도권제1순환선" value="거여고가교">거여고가교</option>
+	<option data-parent="수도권제1순환선" value="복정교">복정교</option>
+	<option data-parent="수도권제1순환선" value="삼산1">삼산1</option>
+	<option data-parent="수도권제1순환선" value="일신">일신</option>
+	<option data-parent="수도권제1순환선" value="성남삼평교2">성남삼평교2</option>
+	<option data-parent="수도권제1순환선" value="성남영업소">성남영업소</option>
+	<option data-parent="수도권제1순환선" value="위례">위례</option>
+	<option data-parent="수도권제1순환선" value="강일육교">강일육교</option>
+	<option data-parent="수도권제1순환선" value="구리영업소">구리영업소</option>
+	<option data-parent="수도권제1순환선" value="구리2">구리2</option>
+	<option data-parent="수도권제1순환선" value="김포대교(북단)">김포대교(북단)</option>
+	<option data-parent="수도권제1순환선" value="김포대교(남단)">김포대교(남단)</option>
+	<option data-parent="수도권제1순환선" value="동양동">동양동</option>
+	<option data-parent="수도권제1순환선" value="서운분기점1">서운분기점1</option>
+	<option data-parent="수도권제1순환선" value="중동진입">중동진입</option>
+	<option data-parent="수도권제1순환선" value="중동진출">중동진출</option>
+	<option data-parent="수도권제1순환선" value="송내진입">송내진입</option>
+	<option data-parent="수도권제1순환선" value="인천대공원">인천대공원</option>
+	<option data-parent="수도권제1순환선" value="소래터널(일산)">소래터널(일산)</option>
+	<option data-parent="수도권제1순환선" value="삼산2">삼산2</option>
+	<option data-parent="수도권제1순환선" value="장수2">장수2</option>
+	<option data-parent="수도권제1순환선" value="구리휴게소">구리휴게소</option>
+	<option data-parent="수도권제1순환선" value="서하남">서하남</option>
+	<option data-parent="수도권제1순환선" value="서하남휴게소">서하남휴게소</option>
+	<option data-parent="수도권제1순환선" value="동양-경부선">동양-경부선</option>
+	<option data-parent="수도권제1순환선" value="소래터널-시흥">소래터널-시흥</option>
+	<option data-parent="수도권제1순환선" value="불암산TG">불암산TG</option>
+	<option data-parent="수도권제1순환선" value="별내IC">별내IC</option>
+	<option data-parent="수도권제1순환선" value="불암터널(일산방향)">불암터널(일산방향)</option>
+	<option data-parent="수도권제1순환선" value="불암터널(퇴계원방향)">불암터널(퇴계원방향)</option>
+	<option data-parent="수도권제1순환선" value="수락터널(일산방향)">수락터널(일산방향)</option>
+	<option data-parent="수도권제1순환선" value="수락터널(퇴계원방향)">수락터널(퇴계원방향)</option>
+	<option data-parent="수도권제1순환선" value="의정부IC">의정부IC</option>
+	<option data-parent="수도권제1순환선" value="사패터널(퇴계원방향)">사패터널(퇴계원방향)</option>
+	<option data-parent="수도권제1순환선" value="송추IC">송추IC</option>
+	<option data-parent="수도권제1순환선" value="노고1터널(일산방향)">노고1터널(일산방향)</option>
+	<option data-parent="수도권제1순환선" value="노고1터널(퇴계원방향)">노고1터널(퇴계원방향)</option>
+	<option data-parent="수도권제1순환선" value="양주TG">양주TG</option>
+	<option data-parent="수도권제1순환선" value="통일로IC">통일로IC</option>
+	<option data-parent="수도권제1순환선" value="고양IC">고양IC</option>
+	<option data-parent="수도권제1순환선" value="내곡교">내곡교</option>
+	<option data-parent="수도권제1순환선" value="노고2터널(퇴계원방향)">노고2터널(퇴계원방향)</option>
+	<option data-parent="수도권제1순환선" value="노고2터널(일산방향)">노고2터널(일산방향)</option>
+	<option data-parent="수도권제1순환선" value="공릉천교">공릉천교</option>
+	<option data-parent="수도권제1순환선" value="광암터널(퇴계원2)">광암터널(퇴계원2)</option>
+	<option data-parent="수도권제1순환선" value="광암터널(판교12)">광암터널(판교12)</option>
+	<option data-parent="수도권제1순환선" value="초일">초일</option>
+	<option data-parent="수도권제1순환선" value="가천대역BS">가천대역BS</option>
+	<option data-parent="수도권제1순환선" value="태평">태평</option>
+	<option data-parent="수도권제1순환선" value="계수4교">계수4교</option>
+	<option data-parent="수도권제1순환선" value="송파진입로">송파진입로</option>
+	<option data-parent="수도권제1순환선" value="위례2">위례2</option>
+	<option data-parent="수도권제1순환선" value="대장교">대장교</option>
+	<option data-parent="수도권제1순환선" value="시흥TG_일산">시흥TG_일산</option>
+	<option data-parent="수도권제1순환선" value="계수1교">계수1교</option>
+	<option data-parent="수원광명선" value="성채터널앞">성채터널앞</option>
+	<option data-parent="수원광명선" value="성채터널(광명)">성채터널(광명)</option>
+	<option data-parent="수원광명선" value="성채터널(수원)">성채터널(수원)</option>
+	<option data-parent="수원광명선" value="성채터널">성채터널</option>
+	<option data-parent="수원광명선" value="소하IC">소하IC</option>
+	<option data-parent="안양성남선" value="삼막IC(성남)">삼막IC(성남)</option>
+	<option data-parent="안양성남선" value="삼성산터널1(안양)">삼성산터널1(안양)</option>
+	<option data-parent="안양성남선" value="삼성산터널1(성남)">삼성산터널1(성남)</option>
+	<option data-parent="안양성남선" value="삼성산터널2(안양)">삼성산터널2(안양)</option>
+	<option data-parent="안양성남선" value="삼성산터널2(성남)">삼성산터널2(성남)</option>
+	<option data-parent="안양성남선" value="안양과천영업소(안양)">안양과천영업소(안양)</option>
+	<option data-parent="안양성남선" value="동판교IC(본선)">동판교IC(본선)</option>
+	<option data-parent="안양성남선" value="여수대로">여수대로</option>
+	<option data-parent="영동선" value="논현육교">논현육교</option>
+	<option data-parent="영동선" value="서창JC">서창JC</option>
+	<option data-parent="영동선" value="서창">서창</option>
+	<option data-parent="용인서울선" value="고등IC서울">고등IC서울</option>
+	<option data-parent="용인서울선" value="고등교">고등교</option>
+	<option data-parent="용인서울선" value="심세곡관리동용인">심세곡관리동용인</option>
+	<option data-parent="용인서울선" value="헌릉IC">헌릉IC</option>
+	<option data-parent="용인서울선" value="세곡교">세곡교</option>
+	<option data-parent="용인서울선" value="고산터널서울">고산터널서울</option>
+	<option data-parent="용인서울선" value="고산터널용인">고산터널용인</option>
+	<option data-parent="용인서울선" value="고등IC용인">고등IC용인</option>
+	<option data-parent="용인서울선" value="고등IC램프">고등IC램프</option>
+	<option data-parent="용인서울선" value="고등터널서울">고등터널서울</option>
+	<option data-parent="용인서울선" value="고등터널용인">고등터널용인</option>
+	<option data-parent="용인서울선" value="심곡터널출구용인">심곡터널출구용인</option>
+	<option data-parent="용인서울선" value="심곡터널입구용인">심곡터널입구용인</option>
+	<option data-parent="용인서울선" value="심곡터널출구서울">심곡터널출구서울</option>
+	<option data-parent="용인서울선" value="심세곡관리동서울">심세곡관리동서울</option>
+	<option data-parent="용인서울선" value="세곡터널출구용인">세곡터널출구용인</option>
+	<option data-parent="용인서울선" value="세곡터널입구서울">세곡터널입구서울</option>
+	<option data-parent="용인서울선" value="세곡터널입구용인">세곡터널입구용인</option>
+	<option data-parent="용인서울선" value="심곡터널입구서울">심곡터널입구서울</option>
+	<option data-parent="용인서울선" value="세곡터널출구서울">세곡터널출구서울</option>
+	<option data-parent="인천국제공항선" value="노오지분기점(공항27.경부선)">노오지분기점(공항27.경부선)</option>
+	<option data-parent="인천국제공항선" value="김포나들목(서울30.안양성남선)">김포나들목(서울30.안양성남선)</option>
+	<option data-parent="인천국제공항선" value="개화터널입구(서울32.경인선)">개화터널입구(서울32.경인선)</option>
+	<option data-parent="인천국제공항선" value="방화대교남단(올림픽대로)(서울34.수원광명선)">방화대교남단(올림픽대로)(서울34.수원광명선)</option>
+	<option data-parent="인천국제공항선" value="방화대교북단(강변북로)(공항36.0)">방화대교북단(강변북로)(공항36.0)</option>
+	<option data-parent="인천국제공항선" value="서울36.0K">서울36.0K</option>
+	<option data-parent="인천국제공항선" value="공항32.8K">공항32.8K</option>
+	<option data-parent="인천국제공항선" value="공항30.1K">공항30.1K</option>
+	<option data-parent="제2경인선" value="남인천">남인천</option>
+	<option data-parent="제2경인선" value="신천">신천</option>
+	<option data-parent="제2경인선" value="광명">광명</option>
+	<option data-parent="제2경인선" value="서창분기점">서창분기점</option>
+	<option data-parent="제2경인선" value="남인천영업소1">남인천영업소1</option>
+	<option data-parent="제2경인선" value="은행3교">은행3교</option>
+	<option data-parent="제2경인선" value="일직">일직</option>
+	<option data-parent="제2경인선" value="석수">석수</option>
+	<option data-parent="제2경인선" value="광명터널">광명터널</option>
+	<option data-parent="제2경인선" value="안현분기점1">안현분기점1</option>
+	<option data-parent="제2경인선" value="안현분기점2">안현분기점2</option>
+	<option data-parent="제2경인선" value="[안양]광명터널(안양2)">[안양]광명터널(안양2)</option>
+	<option data-parent="제2경인선" value="[안양]광명터널(안양3고정)">[안양]광명터널(안양3고정)</option>
+	<option data-parent="제2경인선" value="[인천]광명터널(인천3)">[인천]광명터널(인천3)</option>
+	<option data-parent="제2경인선" value="서창분기점2">서창분기점2</option>
+	<option data-parent="제2경인선" value="남인천2">남인천2</option>
+	<option data-parent="제2중부선" value="광지원터널">광지원터널</option>
+	<option data-parent="제2중부선" value="광지원2교">광지원2교</option>
+	<option data-parent="제2중부선" value="중부1터널">중부1터널</option>
+	<option data-parent="중부선" value="상산곡교">상산곡교</option>
+	<option data-parent="중부선" value="하산곡">하산곡</option>
+	<option data-parent="중부선" value="동서울영업소">동서울영업소</option>
+	<option data-parent="중부선" value="하남">하남</option>
+	<option data-parent="중부선" value="광주">광주</option>
+	<option data-parent="중부선" value="광지원2교">광지원2교</option>
+	<option data-parent="중부선" value="중부1터널">중부1터널</option>
+	<option data-parent="중부선" value="산곡분기점">산곡분기점</option>
+	<option data-parent="중부선" value="번천졸음쉼터">번천졸음쉼터</option>
+	<option data-parent="중부선" value="상산곡">상산곡</option>
+	<option data-parent="중부선" value="천현">천현</option>
+	<option data-parent="중부선" value="천현2">천현2</option>
+</select>
 
-	<button id="confirmBtn">확인</button>
-	<video controls width="100%" height="650px" autoplay>
-		<source th:src="${cctvUrl}" type="video/mp4" />
-	</video>
-	<script>
-		// roads의 selet가 변할 때 그 값에 따른 cities값 변화
-		$('#roads').change(function () {
-			var parent = $(this);
+<button id="confirmBtn">확인</button>
+<video controls width="100%" height="650px" autoplay>
+	<source th:src="${cctvUrl}" type="video/mp4" />
+</video>
+<script>
+	// roads의 selet가 변할 때 그 값에 따른 cities값 변화
+	$('#roads').change(function () {
+		var parent = $(this);
 
-			var visibleOptions = $('#cities option').hide().filter(function () {
-				return $(this).data('parent') == parent.val();
-			}).show();
+		var visibleOptions = $('#cities option').hide().filter(function () {
+			return $(this).data('parent') == parent.val();
+		}).show();
 
-			if (visibleOptions.length)
-				visibleOptions.eq(0).prop('selected', true);
-			else
-				$('#cities').val('');
-		}).change();
+		if (visibleOptions.length)
+			visibleOptions.eq(0).prop('selected', true);
+		else
+			$('#cities').val('');
+	}).change();
 
-		$('#roads, #cities').on('change', function() {
-		       let selectedCity = $('#cities').val();
-		       let selectedRoad = $('#roads').val();
-		       
-		       // URL 업데이트
-		       let newURL = window.location.pathname + '?city=' + encodeURIComponent(selectedCity) + '&road=' + encodeURIComponent(selectedRoad);
-		       window.history.replaceState({ path: newURL }, '', newURL);
-		   });
-		
-		   // 페이지 로드 시 URL에 있는 값으로 select 요소 설정
-		   $(document).ready(function() {
-		       let params = new URLSearchParams(window.location.search);
-		       let cityParam = params.get('city');
-		       let roadParam = params.get('road');
-		
-		       if (cityParam) {
-		           $('#cities').val(cityParam);
-		           $('#cities').change(); // cities 선택 시 roads 업데이트
-		       }
-		       if (roadParam) {
-		           $('#roads').val(roadParam);
-		       }
-		   });
-		
-		   // 확인 버튼 클릭 시 URL 변경 후 이동
-		   $('#confirmBtn').click(function() {
-		       let selectedCity = $('#cities').val();
-		       let selectedRoad = $('#roads').val();
-		       window.location.href = '/cctv?city=' + encodeURIComponent(selectedCity) + '&road=' + encodeURIComponent(selectedRoad);
-		   });
+	$('#roads, #cities').on('change', function() {
+		let selectedCity = $('#cities').val();
+		let selectedRoad = $('#roads').val();
 
-	</script>
+		// URL 업데이트
+		let newURL = window.location.pathname + '?city=' + encodeURIComponent(selectedCity) + '&road=' + encodeURIComponent(selectedRoad);
+		window.history.replaceState({ path: newURL }, '', newURL);
+	});
+
+	// 페이지 로드 시 URL에 있는 값으로 select 요소 설정
+	$(document).ready(function() {
+		let params = new URLSearchParams(window.location.search);
+		let cityParam = params.get('city');
+		let roadParam = params.get('road');
+
+		if (cityParam) {
+			$('#cities').val(cityParam);
+			$('#cities').change(); // cities 선택 시 roads 업데이트
+		}
+		if (roadParam) {
+			$('#roads').val(roadParam);
+		}
+	});
+
+	// 확인 버튼 클릭 시 URL 변경 후 이동
+	$('#confirmBtn').click(function() {
+		let selectedCity = $('#cities').val();
+		let selectedRoad = $('#roads').val();
+		window.location.href = '/cctv?city=' + encodeURIComponent(selectedCity) + '&road=' + encodeURIComponent(selectedRoad);
+	});
+
+</script>
 </body>
 
 </html>

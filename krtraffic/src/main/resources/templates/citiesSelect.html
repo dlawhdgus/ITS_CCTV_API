@@ -1,268 +1,268 @@
-	<!DOCTYPE html>
-	<html lang="en" xmlns:th="http://www.thymeleaf.org">
-	
-	<head>
-		<meta charset="UTF-8">
-		<title>Korean-CCTV</title>
-	</head>
-	
-	<body>
-		<h1 id="title">KoreanTraffic-CCTV</h1>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<select id="roads">
-			<option value="1">경부선</option>
-		    <option value="2">경인선</option>
-		    <option value="3">구리포천선</option>
-		    <option value="4">서울문산선</option>
-		    <option value="5">서울양양선</option>
-		    <option value="6">서해안선</option>
-		    <option value="7">수도권제1순환선</option>
-		    <option value="8">수원광명선</option>
-		    <option value="9">안양성남선</option>
-		    <option value="10">영동선</option>
-		    <option value="11">용인서울선</option>
-		    <option value="12">인천국제공항선</option>
-		    <option value="13">제2경인선</option>
-		    <option value="14">제2중부선</option>
-		    <option value="15">중부선</option>
-		</select>
-		
-		<select id="cities">
-			<option data-parent="1">서초</option>
-		    <option data-parent="1">원지동</option>
-		    <option data-parent="1">양재</option>
-		    <option data-parent="1">상적교</option>
-		    <option data-parent="1">달래내2</option>
-		    <option data-parent="1">금현동</option>
-		    <option data-parent="1">달래내1</option>
-		    <option data-parent="1">금토분기점1</option>
-		    <option data-parent="1">금토분기점2</option>
-		    <option data-parent="2">신월</option>
-		    <option data-parent="2">부천</option>
-		    <option data-parent="2">인천영업소</option>
-		    <option data-parent="2">도당</option>
-		    <option data-parent="2">서운분기점2</option>
-		    <option data-parent="2">도당육교</option>
-		    <option data-parent="2">신월-1</option>
-		    <option data-parent="2">도당2</option>
-		    <option data-parent="2">신월2</option>
-			<option data-parent="3">남구리IC</option>
-			<option data-parent="3">구리터널관리사무소</option>
-			<option data-parent="3">중랑IC교</option>
-			<option data-parent="3">갈매2육교</option>
-			<option data-parent="3">용암천1교</option>
-			<option data-parent="3">별내2교</option>
-			<option data-parent="3">남별내IC</option>
-			<option data-parent="3">별내휴게소</option>
-			<option data-parent="4">봉대산JCT</option>
-			<option data-parent="4">흥도IC</option>
-			<option data-parent="4">성라산생태교</option>
-			<option data-parent="4">성사교</option>
-			<option data-parent="4">고양JCT북</option>
-			<option data-parent="4">원당교</option>
-			<option data-parent="4">사리현IC</option>
-			<option data-parent="4">문봉교</option>
-			<option data-parent="4">성석육교</option>
-			<option data-parent="4">남고양IC지선1</option>
-			<option data-parent="5">강일</option>
-			<option data-parent="5">남양주영업소3</option>
-			<option data-parent="5">덕소1교</option>
-			<option data-parent="5">미사대교</option>
-			<option data-parent="5">미사</option>
-			<option data-parent="5">남양주영업소2</option>
-			<option data-parent="5">월문1교</option>
-			<option data-parent="5">삼패교</option>
-			<option data-parent="5">덕소삼패영업소</option>
-			<option data-parent="5">남양주영업소1</option>
-			<option data-parent="5">미사대교종점</option>
-			<option data-parent="5">월문1터널외부(양양)</option>
-			<option data-parent="6">금천</option>
-			<option data-parent="6">금천고가교</option>
-			<option data-parent="6">일직분기점</option>
-			<option data-parent="6">일직분기점2</option>
-			<option data-parent="7">성남</option>
-			<option data-parent="7">성남요금소</option>
-			<option data-parent="7">송파</option>
-			<option data-parent="7">서하남2</option>
-			<option data-parent="7">광암터널2</option>
-			<option data-parent="7">광암터널3</option>
-			<option data-parent="7">하남분기점</option>
-			<option data-parent="7">상일</option>
-			<option data-parent="7">강일</option>
-			<option data-parent="7">토평</option>
-			<option data-parent="7">남양주</option>
-			<option data-parent="7">퇴계원</option>
-			<option data-parent="7">구리</option>
-			<option data-parent="7">안현분기점</option>
-			<option data-parent="7">시흥</option>
-			<option data-parent="7">장수</option>
-			<option data-parent="7">서운분기점</option>
-			<option data-parent="7">노오지분기점</option>
-			<option data-parent="7">김포</option>
-			<option data-parent="7">자유로분기점</option>
-			<option data-parent="7">일산</option>
-			<option data-parent="7">시흥영업소</option>
-			<option data-parent="7">계양</option>
-			<option data-parent="7">재너머골</option>
-			<option data-parent="7">김포영업소</option>
-			<option data-parent="7">중동</option>
-			<option data-parent="7">송내</option>
-			<option data-parent="7">거여고가교</option>
-			<option data-parent="7">복정교</option>
-			<option data-parent="7">삼산1</option>
-			<option data-parent="7">일신</option>
-			<option data-parent="7">성남삼평교2</option>
-			<option data-parent="7">성남영업소</option>
-			<option data-parent="7">위례</option>
-			<option data-parent="7">강일육교</option>
-			<option data-parent="7">구리영업소</option>
-			<option data-parent="7">구리2</option>
-			<option data-parent="7">김포대교(북단)</option>
-			<option data-parent="7">김포대교(남단)</option>
-			<option data-parent="7">동양동</option>
-			<option data-parent="7">서운분기점1</option>
-			<option data-parent="7">중동진입</option>
-			<option data-parent="7">중동진출</option>
-			<option data-parent="7">송내진입</option>
-			<option data-parent="7">인천대공원</option>
-			<option data-parent="7">소래터널(일산)</option>
-			<option data-parent="7">삼산2</option>
-			<option data-parent="7">장수2</option>
-			<option data-parent="7">구리휴게소</option>
-			<option data-parent="7">서하남</option>
-			<option data-parent="7">서하남휴게소</option>
-			<option data-parent="7">동양-1</option>
-			<option data-parent="7">소래터널-시흥</option>
-			<option data-parent="7">불암산TG</option>
-			<option data-parent="7">별내IC</option>
-			<option data-parent="7">불암터널(일산방향)</option>
-			<option data-parent="7">불암터널(퇴계원방향)</option>
-			<option data-parent="7">수락터널(일산방향)</option>
-			<option data-parent="7">수락터널(퇴계원방향)</option>
-			<option data-parent="7">의정부IC</option>
-			<option data-parent="7">사패터널(퇴계원방향)</option>
-			<option data-parent="7">송추IC</option>
-			<option data-parent="7">노고1터널(일산방향)</option>
-			<option data-parent="7">노고1터널(퇴계원방향)</option>
-			<option data-parent="7">양주TG</option>
-			<option data-parent="7">통일로IC</option>
-			<option data-parent="7">고양IC</option>
-			<option data-parent="7">내곡교</option>
-			<option data-parent="7">노고2터널(퇴계원방향)</option>
-			<option data-parent="7">노고2터널(일산방향)</option>
-			<option data-parent="7">공릉천교</option>
-			<option data-parent="7">광암터널(퇴계원2)</option>
-			<option data-parent="7">광암터널(판교12)</option>
-			<option data-parent="7">초일</option>
-			<option data-parent="7">가천대역BS</option>
-			<option data-parent="7">태평</option>
-			<option data-parent="7">계수4교</option>
-			<option data-parent="7">송파진입로</option>
-			<option data-parent="7">위례2</option>
-			<option data-parent="7">대장교</option>
-			<option data-parent="7">시흥TG_일산</option>
-			<option data-parent="7">계수1교</option>
-			<option data-parent="8">성채터널앞</option>
-			<option data-parent="8">성채터널(광명)</option>
-			<option data-parent="8">성채터널(수원)</option>
-			<option data-parent="8">성채터널</option>
-			<option data-parent="8">소하IC</option>
-			<option data-parent="9">삼막IC(성남)</option>
-			<option data-parent="9">삼성산터널1(안양)</option>
-			<option data-parent="9">삼성산터널1(성남)</option>
-			<option data-parent="9">삼성산터널2(안양)</option>
-			<option data-parent="9">삼성산터널2(성남)</option>
-			<option data-parent="9">안양과천영업소(안양)</option>
-			<option data-parent="9">동판교IC(본선)</option>
-			<option data-parent="9">여수대로</option>
-			<option data-parent="10">논현육교</option>
-			<option data-parent="10">서창JC</option>
-			<option data-parent="10">서창</option>
-			<option data-parent="11">고등IC서울</option>
-			<option data-parent="11">고등교</option>
-			<option data-parent="11">심세곡관리동용인</option>
-			<option data-parent="11">헌릉IC</option>
-			<option data-parent="11">세곡교</option>
-			<option data-parent="11">고산터널서울</option>
-			<option data-parent="11">고산터널용인</option>
-			<option data-parent="11">고등IC용인</option>
-			<option data-parent="11">고등IC램프</option>
-			<option data-parent="11">고등터널서울</option>
-			<option data-parent="11">고등터널용인</option>
-			<option data-parent="11">심곡터널출구용인</option>
-			<option data-parent="11">심곡터널입구용인</option>
-			<option data-parent="11">심곡터널출구서울</option>
-			<option data-parent="11">심세곡관리동서울</option>
-			<option data-parent="11">세곡터널출구용인</option>
-			<option data-parent="11">세곡터널입구서울</option>
-			<option data-parent="11">세곡터널입구용인</option>
-			<option data-parent="11">심곡터널입구서울</option>
-			<option data-parent="11">세곡터널출구서울</option>
-			<option data-parent="12">노오지분기점(공항27.1)</option>
-			<option data-parent="12">김포나들목(서울30.9)</option>
-			<option data-parent="12">개화터널입구(서울32.2)</option>
-			<option data-parent="12">방화대교남단(올림픽대로)(서울34.8)</option>
-			<option data-parent="12">방화대교북단(강변북로)(공항36.0)</option>
-			<option data-parent="12">서울36.0K</option>
-			<option data-parent="12">공항32.8K</option>
-			<option data-parent="12">공항30.1K</option>
-			<option data-parent="13">남인천</option>
-			<option data-parent="13">신천</option>
-			<option data-parent="13">광명</option>
-			<option data-parent="13">서창분기점</option>
-			<option data-parent="13">남인천영업소1</option>
-			<option data-parent="13">은행3교</option>
-			<option data-parent="13">일직</option>
-			<option data-parent="13">석수</option>
-			<option data-parent="13">광명터널</option>
-			<option data-parent="13">안현분기점1</option>
-			<option data-parent="13">안현분기점2</option>
-			<option data-parent="13">[안양]광명터널(안양2)</option>
-			<option data-parent="13">[안양]광명터널(안양3고정)</option>
-			<option data-parent="13">[인천]광명터널(인천3)</option>
-			<option data-parent="13">서창분기점2</option>
-			<option data-parent="13">남인천2</option>
-			<option data-parent="14">광지원터널</option>
-			<option data-parent="14">광지원2교</option>
-			<option data-parent="14">중부1터널</option>
-			<option data-parent="15">상산곡교</option>
-			<option data-parent="15">하산곡</option>
-			<option data-parent="15">동서울영업소</option>
-			<option data-parent="15">하남</option>
-			<option data-parent="15">광주</option>
-			<option data-parent="15">광지원2교</option>
-			<option data-parent="15">중부1터널</option>
-			<option data-parent="15">산곡분기점</option>
-			<option data-parent="15">번천졸음쉼터</option>
-			<option data-parent="15">상산곡</option>
-			<option data-parent="15">천현</option>
-			<option data-parent="15">천현2</option>
-		</select>
-	
-		<button id="confirmBtn">확인</button>
-		<script>
-			// roads의 selet가 변할 때 그 값에 따른 cities값 변화
-			$('#roads').change(function() {
-			    var parent = $(this);
-			    
-			    var visibleOptions = $('#cities option').hide().filter(function() {
-			         return $(this).data('parent') == parent.val();
-			    }).show();
-			            
-			    if(visibleOptions.length)
-			        visibleOptions.eq(0).prop('selected', true);
-			    else
-			        $('#cities').val('');
-			}).change();
-					
-			// Select에서 받은 city의 값으로 redirect
-		    $(document).ready(function() {
-		        $('#confirmBtn').click(function() {
-		            var selectedCity = $('#cities').val();
-		            window.location.href = '/cctv?city=' + encodeURIComponent(selectedCity);
-		        });
-		    });
-		</script>
-	</body>
-	
-	</html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Korean-CCTV</title>
+</head>
+
+<body>
+<h1 id="title">KoreanTraffic-CCTV</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<select id="roads">
+	<option value="1">경부선</option>
+	<option value="2">경인선</option>
+	<option value="3">구리포천선</option>
+	<option value="4">서울문산선</option>
+	<option value="5">서울양양선</option>
+	<option value="6">서해안선</option>
+	<option value="7">수도권제1순환선</option>
+	<option value="8">수원광명선</option>
+	<option value="9">안양성남선</option>
+	<option value="10">영동선</option>
+	<option value="11">용인서울선</option>
+	<option value="12">인천국제공항선</option>
+	<option value="13">제2경인선</option>
+	<option value="14">제2중부선</option>
+	<option value="15">중부선</option>
+</select>
+
+<select id="cities">
+	<option data-parent="1">서초</option>
+	<option data-parent="1">원지동</option>
+	<option data-parent="1">양재</option>
+	<option data-parent="1">상적교</option>
+	<option data-parent="1">달래내2</option>
+	<option data-parent="1">금현동</option>
+	<option data-parent="1">달래내1</option>
+	<option data-parent="1">금토분기점1</option>
+	<option data-parent="1">금토분기점2</option>
+	<option data-parent="2">신월</option>
+	<option data-parent="2">부천</option>
+	<option data-parent="2">인천영업소</option>
+	<option data-parent="2">도당</option>
+	<option data-parent="2">서운분기점2</option>
+	<option data-parent="2">도당육교</option>
+	<option data-parent="2">신월-1</option>
+	<option data-parent="2">도당2</option>
+	<option data-parent="2">신월2</option>
+	<option data-parent="3">남구리IC</option>
+	<option data-parent="3">구리터널관리사무소</option>
+	<option data-parent="3">중랑IC교</option>
+	<option data-parent="3">갈매2육교</option>
+	<option data-parent="3">용암천1교</option>
+	<option data-parent="3">별내2교</option>
+	<option data-parent="3">남별내IC</option>
+	<option data-parent="3">별내휴게소</option>
+	<option data-parent="4">봉대산JCT</option>
+	<option data-parent="4">흥도IC</option>
+	<option data-parent="4">성라산생태교</option>
+	<option data-parent="4">성사교</option>
+	<option data-parent="4">고양JCT북</option>
+	<option data-parent="4">원당교</option>
+	<option data-parent="4">사리현IC</option>
+	<option data-parent="4">문봉교</option>
+	<option data-parent="4">성석육교</option>
+	<option data-parent="4">남고양IC지선1</option>
+	<option data-parent="5">강일</option>
+	<option data-parent="5">남양주영업소3</option>
+	<option data-parent="5">덕소1교</option>
+	<option data-parent="5">미사대교</option>
+	<option data-parent="5">미사</option>
+	<option data-parent="5">남양주영업소2</option>
+	<option data-parent="5">월문1교</option>
+	<option data-parent="5">삼패교</option>
+	<option data-parent="5">덕소삼패영업소</option>
+	<option data-parent="5">남양주영업소1</option>
+	<option data-parent="5">미사대교종점</option>
+	<option data-parent="5">월문1터널외부(양양)</option>
+	<option data-parent="6">금천</option>
+	<option data-parent="6">금천고가교</option>
+	<option data-parent="6">일직분기점</option>
+	<option data-parent="6">일직분기점2</option>
+	<option data-parent="7">성남</option>
+	<option data-parent="7">성남요금소</option>
+	<option data-parent="7">송파</option>
+	<option data-parent="7">서하남2</option>
+	<option data-parent="7">광암터널2</option>
+	<option data-parent="7">광암터널3</option>
+	<option data-parent="7">하남분기점</option>
+	<option data-parent="7">상일</option>
+	<option data-parent="7">강일</option>
+	<option data-parent="7">토평</option>
+	<option data-parent="7">남양주</option>
+	<option data-parent="7">퇴계원</option>
+	<option data-parent="7">구리</option>
+	<option data-parent="7">안현분기점</option>
+	<option data-parent="7">시흥</option>
+	<option data-parent="7">장수</option>
+	<option data-parent="7">서운분기점</option>
+	<option data-parent="7">노오지분기점</option>
+	<option data-parent="7">김포</option>
+	<option data-parent="7">자유로분기점</option>
+	<option data-parent="7">일산</option>
+	<option data-parent="7">시흥영업소</option>
+	<option data-parent="7">계양</option>
+	<option data-parent="7">재너머골</option>
+	<option data-parent="7">김포영업소</option>
+	<option data-parent="7">중동</option>
+	<option data-parent="7">송내</option>
+	<option data-parent="7">거여고가교</option>
+	<option data-parent="7">복정교</option>
+	<option data-parent="7">삼산1</option>
+	<option data-parent="7">일신</option>
+	<option data-parent="7">성남삼평교2</option>
+	<option data-parent="7">성남영업소</option>
+	<option data-parent="7">위례</option>
+	<option data-parent="7">강일육교</option>
+	<option data-parent="7">구리영업소</option>
+	<option data-parent="7">구리2</option>
+	<option data-parent="7">김포대교(북단)</option>
+	<option data-parent="7">김포대교(남단)</option>
+	<option data-parent="7">동양동</option>
+	<option data-parent="7">서운분기점1</option>
+	<option data-parent="7">중동진입</option>
+	<option data-parent="7">중동진출</option>
+	<option data-parent="7">송내진입</option>
+	<option data-parent="7">인천대공원</option>
+	<option data-parent="7">소래터널(일산)</option>
+	<option data-parent="7">삼산2</option>
+	<option data-parent="7">장수2</option>
+	<option data-parent="7">구리휴게소</option>
+	<option data-parent="7">서하남</option>
+	<option data-parent="7">서하남휴게소</option>
+	<option data-parent="7">동양-1</option>
+	<option data-parent="7">소래터널-시흥</option>
+	<option data-parent="7">불암산TG</option>
+	<option data-parent="7">별내IC</option>
+	<option data-parent="7">불암터널(일산방향)</option>
+	<option data-parent="7">불암터널(퇴계원방향)</option>
+	<option data-parent="7">수락터널(일산방향)</option>
+	<option data-parent="7">수락터널(퇴계원방향)</option>
+	<option data-parent="7">의정부IC</option>
+	<option data-parent="7">사패터널(퇴계원방향)</option>
+	<option data-parent="7">송추IC</option>
+	<option data-parent="7">노고1터널(일산방향)</option>
+	<option data-parent="7">노고1터널(퇴계원방향)</option>
+	<option data-parent="7">양주TG</option>
+	<option data-parent="7">통일로IC</option>
+	<option data-parent="7">고양IC</option>
+	<option data-parent="7">내곡교</option>
+	<option data-parent="7">노고2터널(퇴계원방향)</option>
+	<option data-parent="7">노고2터널(일산방향)</option>
+	<option data-parent="7">공릉천교</option>
+	<option data-parent="7">광암터널(퇴계원2)</option>
+	<option data-parent="7">광암터널(판교12)</option>
+	<option data-parent="7">초일</option>
+	<option data-parent="7">가천대역BS</option>
+	<option data-parent="7">태평</option>
+	<option data-parent="7">계수4교</option>
+	<option data-parent="7">송파진입로</option>
+	<option data-parent="7">위례2</option>
+	<option data-parent="7">대장교</option>
+	<option data-parent="7">시흥TG_일산</option>
+	<option data-parent="7">계수1교</option>
+	<option data-parent="8">성채터널앞</option>
+	<option data-parent="8">성채터널(광명)</option>
+	<option data-parent="8">성채터널(수원)</option>
+	<option data-parent="8">성채터널</option>
+	<option data-parent="8">소하IC</option>
+	<option data-parent="9">삼막IC(성남)</option>
+	<option data-parent="9">삼성산터널1(안양)</option>
+	<option data-parent="9">삼성산터널1(성남)</option>
+	<option data-parent="9">삼성산터널2(안양)</option>
+	<option data-parent="9">삼성산터널2(성남)</option>
+	<option data-parent="9">안양과천영업소(안양)</option>
+	<option data-parent="9">동판교IC(본선)</option>
+	<option data-parent="9">여수대로</option>
+	<option data-parent="10">논현육교</option>
+	<option data-parent="10">서창JC</option>
+	<option data-parent="10">서창</option>
+	<option data-parent="11">고등IC서울</option>
+	<option data-parent="11">고등교</option>
+	<option data-parent="11">심세곡관리동용인</option>
+	<option data-parent="11">헌릉IC</option>
+	<option data-parent="11">세곡교</option>
+	<option data-parent="11">고산터널서울</option>
+	<option data-parent="11">고산터널용인</option>
+	<option data-parent="11">고등IC용인</option>
+	<option data-parent="11">고등IC램프</option>
+	<option data-parent="11">고등터널서울</option>
+	<option data-parent="11">고등터널용인</option>
+	<option data-parent="11">심곡터널출구용인</option>
+	<option data-parent="11">심곡터널입구용인</option>
+	<option data-parent="11">심곡터널출구서울</option>
+	<option data-parent="11">심세곡관리동서울</option>
+	<option data-parent="11">세곡터널출구용인</option>
+	<option data-parent="11">세곡터널입구서울</option>
+	<option data-parent="11">세곡터널입구용인</option>
+	<option data-parent="11">심곡터널입구서울</option>
+	<option data-parent="11">세곡터널출구서울</option>
+	<option data-parent="12">노오지분기점(공항27.1)</option>
+	<option data-parent="12">김포나들목(서울30.9)</option>
+	<option data-parent="12">개화터널입구(서울32.2)</option>
+	<option data-parent="12">방화대교남단(올림픽대로)(서울34.8)</option>
+	<option data-parent="12">방화대교북단(강변북로)(공항36.0)</option>
+	<option data-parent="12">서울36.0K</option>
+	<option data-parent="12">공항32.8K</option>
+	<option data-parent="12">공항30.1K</option>
+	<option data-parent="13">남인천</option>
+	<option data-parent="13">신천</option>
+	<option data-parent="13">광명</option>
+	<option data-parent="13">서창분기점</option>
+	<option data-parent="13">남인천영업소1</option>
+	<option data-parent="13">은행3교</option>
+	<option data-parent="13">일직</option>
+	<option data-parent="13">석수</option>
+	<option data-parent="13">광명터널</option>
+	<option data-parent="13">안현분기점1</option>
+	<option data-parent="13">안현분기점2</option>
+	<option data-parent="13">[안양]광명터널(안양2)</option>
+	<option data-parent="13">[안양]광명터널(안양3고정)</option>
+	<option data-parent="13">[인천]광명터널(인천3)</option>
+	<option data-parent="13">서창분기점2</option>
+	<option data-parent="13">남인천2</option>
+	<option data-parent="14">광지원터널</option>
+	<option data-parent="14">광지원2교</option>
+	<option data-parent="14">중부1터널</option>
+	<option data-parent="15">상산곡교</option>
+	<option data-parent="15">하산곡</option>
+	<option data-parent="15">동서울영업소</option>
+	<option data-parent="15">하남</option>
+	<option data-parent="15">광주</option>
+	<option data-parent="15">광지원2교</option>
+	<option data-parent="15">중부1터널</option>
+	<option data-parent="15">산곡분기점</option>
+	<option data-parent="15">번천졸음쉼터</option>
+	<option data-parent="15">상산곡</option>
+	<option data-parent="15">천현</option>
+	<option data-parent="15">천현2</option>
+</select>
+
+<button id="confirmBtn">확인</button>
+<script>
+	// roads의 selet가 변할 때 그 값에 따른 cities값 변화
+	$('#roads').change(function() {
+		var parent = $(this);
+
+		var visibleOptions = $('#cities option').hide().filter(function() {
+			return $(this).data('parent') == parent.val();
+		}).show();
+
+		if(visibleOptions.length)
+			visibleOptions.eq(0).prop('selected', true);
+		else
+			$('#cities').val('');
+	}).change();
+
+	// Select에서 받은 city의 값으로 redirect
+	$(document).ready(function() {
+		$('#confirmBtn').click(function() {
+			var selectedCity = $('#cities').val();
+			window.location.href = '/cctv?city=' + encodeURIComponent(selectedCity);
+		});
+	});
+</script>
+</body>
+
+</html>

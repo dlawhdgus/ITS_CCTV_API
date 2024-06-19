@@ -19,8 +19,7 @@ import com.example.krtr.repository.roadsRepository;
 import com.example.krtr.util.getCCTVUrl;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 import java.io.IOException;
 
 @Service
@@ -62,10 +61,11 @@ public class citiesService {
 
 	// 받은 apiData에서 URL를 추출
 	public String getRoadInfo(String cityInfo) throws IOException {
+		String regex = "roadId='([^']+)'";
 		String roadInfo = "";
 
-		Pattern roadInfoPattern = Pattern.compile("roadId=([^)]+)");
-		Matcher roadInfoMatcher = roadInfoPattern.matcher(cityInfo);
+		Pattern roadInfoPattern = Pattern.compile(regex);
+		Matcher roadInfoMatcher = roadInfoPattern.matcher(cityInfo.toString());
 
 		if (roadInfoMatcher.find()) {
 			String roadId = roadInfoMatcher.group(1);
@@ -76,6 +76,7 @@ public class citiesService {
 
 			Pattern getCoordinatePattern = Pattern
 					.compile("maxx=([\\d.]+), minx=([\\d.]+), maxy=([\\d.]+), miny=([\\d.]+)");
+
 			Matcher CoordinateMatcher = getCoordinatePattern.matcher(roadInfo);
 
 			if (CoordinateMatcher.find()) {

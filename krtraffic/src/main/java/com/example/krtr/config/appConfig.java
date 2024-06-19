@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class appConfig {
 
-	// Bean에 등록 
+    // Bean에 등록
     @Bean
     getCCTVUrl getCCTVUrlBean() {
         return new getCCTVUrl();

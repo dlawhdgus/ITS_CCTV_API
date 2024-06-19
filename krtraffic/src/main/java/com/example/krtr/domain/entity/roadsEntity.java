@@ -16,6 +16,16 @@ public class roadsEntity {
 	private Double minx;
 	private Double maxy;
 	private Double miny;
-	
-	
+
+	@Override
+	public String toString() {
+		return "roadsEntity{" +
+				"roadName='" + roadName + '\'' +
+				", roadCount=" + roadCount +
+				", maxx=" + maxx +
+				", minx=" + minx +
+				", maxy=" + maxy +
+				", miny=" + miny +
+				'}';
+	}
 }

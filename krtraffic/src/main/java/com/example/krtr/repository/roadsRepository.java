@@ -10,8 +10,8 @@ import com.example.krtr.domain.entity.roadsEntity;
 
 @Repository
 public interface roadsRepository extends JpaRepository<roadsEntity, String>{
-	
-	// roadName으로 road 테이블에 있는 정보 추출 
+
+	// roadName으로 road 테이블에 있는 정보 추출
 	public List<roadsEntity> findByRoadName(String roadName);
-	
+
 }
